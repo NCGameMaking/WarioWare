@@ -35,7 +35,7 @@ offset_right = 699.0
 offset_bottom = 504.0
 theme_override_constants/separation = 15
 
-[node name="Button" type="Button" parent="VBoxContainer" unique_id=754428150]
+[node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=754428150]
 custom_minimum_size = Vector2(287, 61)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -43,7 +43,7 @@ theme_override_fonts/font = ExtResource("2_w2xth")
 theme_override_font_sizes/font_size = 40
 text = "Start"
 
-[node name="Button2" type="Button" parent="VBoxContainer" unique_id=42915860]
+[node name="SettingButton" type="Button" parent="VBoxContainer" unique_id=42915860]
 custom_minimum_size = Vector2(287, 61)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -51,10 +51,14 @@ theme_override_fonts/font = ExtResource("2_w2xth")
 theme_override_font_sizes/font_size = 40
 text = "Settings"
 
-[node name="Button3" type="Button" parent="VBoxContainer" unique_id=870547887]
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=870547887]
 custom_minimum_size = Vector2(287, 61)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_w2xth")
 theme_override_font_sizes/font_size = 40
 text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/SettingButton" to="." method="_on_setting_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
