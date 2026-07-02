@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bncy2ocs7377v" path="res://WarioTitle.png" id="3_y8rem"]
 [ext_resource type="Texture2D" uid="uid://c7rmatpdqwgjh" path="res://gorlic.png" id="4_0mi1i"]
 [ext_resource type="FontFile" uid="uid://dyeeseal1y6xb" path="res://Wariowareinc-BWWdn.ttf" id="5_jismn"]
+[ext_resource type="AudioStream" uid="uid://lkuxjfxgtcbh" path="res://SFX/TimerTicking.mp3" id="6_mxose"]
 
 [node name="LevelScene" type="Node2D" unique_id=1654845019]
 script = ExtResource("1_bseyb")
@@ -67,3 +68,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("5_jismn")
 theme_override_font_sizes/normal_font_size = 42
 text = "0.0"
+
+[node name="TimerTicking" type="AudioStreamPlayer" parent="." unique_id=570184670]
+stream = ExtResource("6_mxose")
+autoplay = true

@@ -18,11 +18,12 @@ func _ready() -> void:
 	await themed_timer.Timer(5.0) #accessing a function from this node
 	#after this is compeleted...
 	timer_end = true # now we're saying "oh ye you ran out of time"
+	$LoseSFX.play()
 
 func _process(delta: float) -> void: # running every frame brochacho
 	
 	if garlic_collected == 3: # the double equals is just an argument asking if it's the same, with "=" it'll give an error
-		if Global.minigames_done > 3: # we access a global script and see how many minigames have been compeleted
+		if Global.minigames_done > 4: # we access a global script and see how many minigames have been compeleted
 			get_tree().change_scene_to_file("res://scenes/done_screen.tscn") # change current play scene into another, but you make your own finish screen in a later challenge, dont worry abt this rn
 		else:
 			get_tree().change_scene_to_file("res://scenes/timer_screen.tscn") # go back to the intermission scene

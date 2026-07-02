@@ -4,7 +4,9 @@
 [ext_resource type="Script" uid="uid://bwec8cy78m0wh" path="res://scenes/minigame_3.gd" id="1_yiing"]
 [ext_resource type="Script" uid="uid://bds1qdv1vlcg4" path="res://player.gd" id="3_nuwo7"]
 [ext_resource type="Texture2D" uid="uid://d3om58rhy2n2p" path="res://Wario.png" id="4_rguwe"]
+[ext_resource type="AudioStream" uid="uid://br6nvawdoxnpo" path="res://SFX/WarioJump.mp3" id="5_knknf"]
 [ext_resource type="PackedScene" uid="uid://cxdhx3iuquyi" path="res://themed_timer.tscn" id="5_nuwo7"]
+[ext_resource type="AudioStream" uid="uid://cedlxntucvd1d" path="res://SFX/game-music-loop.mp3" id="6_rguwe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vhxdv"]
 size = Vector2(40, 40)
@@ -100,10 +102,17 @@ shape = SubResource("CircleShape2D_onrkg")
 position = Vector2(-7, 0)
 shape = SubResource("CircleShape2D_onrkg")
 
+[node name="WarioJump" type="AudioStreamPlayer" parent="Player" unique_id=1797571074]
+stream = ExtResource("5_knknf")
+
 [node name="Timer" type="Timer" parent="." unique_id=518041317]
 autostart = true
 
 [node name="ThemedTimer" parent="." unique_id=1047901088 instance=ExtResource("5_nuwo7")]
 position = Vector2(20, 51)
+
+[node name="BGMUSIC" type="AudioStreamPlayer" parent="." unique_id=619124253]
+stream = ExtResource("6_rguwe")
+autoplay = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

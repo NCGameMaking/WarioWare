@@ -12,6 +12,8 @@ func _process(delta: float) -> void: # this runs EVERY FRAME!
 		if self.visible:
 			emit_signal("garlic_collected") #signal broadcast
 			self.hide() #removed from player sight; collected
+			queue_free()
+			$"../GarlicCollect".play()
 		
 
 # Because you're emitting a signal here, you need to connect that signal to 

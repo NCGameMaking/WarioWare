@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://cntafr5ncs4p0" path="res://scenes/done_screen.gd" id="1_k66lo"]
 [ext_resource type="Texture2D" uid="uid://8ds0n8j1wstn" path="res://Domino_Row_2.png" id="1_uqm27"]
 [ext_resource type="FontFile" uid="uid://dyeeseal1y6xb" path="res://Wariowareinc-BWWdn.ttf" id="2_k66lo"]
+[ext_resource type="AudioStream" uid="uid://diyvr37h2ayl4" path="res://SFX/wario-won.mp3" id="4_c2erd"]
+[ext_resource type="AudioStream" uid="uid://0ov3euscipus" path="res://SFX/WinSound.mp3" id="5_t6dg5"]
 
 [node name="DoneScreen" type="Node2D" unique_id=309643900]
 script = ExtResource("1_k66lo")
@@ -59,6 +61,14 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_k66lo")
 theme_override_font_sizes/font_size = 40
 text = "Quit"
+
+[node name="WarioWOn" type="AudioStreamPlayer" parent="." unique_id=1826047806]
+stream = ExtResource("4_c2erd")
+autoplay = true
+
+[node name="WarioWOn2" type="AudioStreamPlayer" parent="." unique_id=1048551940]
+stream = ExtResource("5_t6dg5")
+autoplay = true
 
 [connection signal="pressed" from="Title/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Title/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

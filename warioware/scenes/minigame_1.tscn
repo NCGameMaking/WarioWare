@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://c7rmatpdqwgjh" path="res://gorlic.png" id="3_lmjug"]
 [ext_resource type="Script" uid="uid://dhcixf8yy5pv4" path="res://scenes/garlic.gd" id="3_v5ebm"]
 [ext_resource type="PackedScene" uid="uid://cxdhx3iuquyi" path="res://themed_timer.tscn" id="6_j1cg4"]
+[ext_resource type="AudioStream" uid="uid://bb38hs8vj6hh3" path="res://SFX/CollectCoin.mp3" id="7_vc5od"]
+[ext_resource type="AudioStream" uid="uid://ihnf5r1mqabm" path="res://SFX/WarioDeathAnim.mp3" id="8_xpvfh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ru16"]
 size = Vector2(40, 40)
@@ -228,6 +230,12 @@ shape = SubResource("CircleShape2D_lmjug")
 
 [node name="ThemedTimer" parent="." unique_id=1047901088 instance=ExtResource("6_j1cg4")]
 position = Vector2(55, 62)
+
+[node name="GarlicCollect" type="AudioStreamPlayer" parent="." unique_id=1171946827]
+stream = ExtResource("7_vc5od")
+
+[node name="LoseSFX" type="AudioStreamPlayer" parent="." unique_id=1085101347]
+stream = ExtResource("8_xpvfh")
 
 [connection signal="garlic_collected" from="Garlic" to="." method="_on_garlic_garlic_collected"]
 [connection signal="garlic_collected" from="Garlic2" to="." method="_on_garlic_2_garlic_collected"]

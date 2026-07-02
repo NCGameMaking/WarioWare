@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://dxs5a7frtdmlt" path="res://title_slide.gd" id="1_vj0xv"]
 [ext_resource type="FontFile" uid="uid://dyeeseal1y6xb" path="res://Wariowareinc-BWWdn.ttf" id="2_w2xth"]
 [ext_resource type="Texture2D" uid="uid://bncy2ocs7377v" path="res://WarioTitle.png" id="4_vj0xv"]
+[ext_resource type="AudioStream" uid="uid://brm7dwxt5hsjn" path="res://SFX/warioware-microgame-start-sfx.mp3" id="5_4bwrj"]
+[ext_resource type="AudioStream" uid="uid://gncojcsebyaf" path="res://SFX/bang.mp3" id="6_si1g6"]
 
 [node name="TitleSlide" type="Node2D" unique_id=380557606]
 script = ExtResource("1_vj0xv")
@@ -59,6 +61,13 @@ text = "Quit"
 position = Vector2(200.5, 449.278)
 scale = Vector2(1.444, 1.4439999)
 texture = ExtResource("4_vj0xv")
+
+[node name="WarioMusicIntro" type="AudioStreamPlayer" parent="." unique_id=1935713644]
+stream = ExtResource("5_4bwrj")
+autoplay = true
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="." unique_id=1447428617]
+stream = ExtResource("6_si1g6")
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/SettingButton" to="." method="_on_setting_button_pressed"]

@@ -2,11 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://d3om58rhy2n2p" path="res://Wario.png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://bds1qdv1vlcg4" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="AudioStream" uid="uid://br6nvawdoxnpo" path="res://SFX/WarioJump.mp3" id="3_i3pqv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
 radius = 194.04123
 
-[node name="Player" type="CharacterBody2D" unique_id=936028192]
+[node name="Player" type="CharacterBody2D" unique_id=936028192 groups=["Player", "rocks"]]
 scale = Vector2(0.3, 0.3)
 script = ExtResource("1_onrkg")
 
@@ -22,5 +23,8 @@ shape = SubResource("CircleShape2D_onrkg")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=594638744]
 position = Vector2(-7, 0)
 shape = SubResource("CircleShape2D_onrkg")
+
+[node name="WarioJump" type="AudioStreamPlayer" parent="." unique_id=2029928054]
+stream = ExtResource("3_i3pqv")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
