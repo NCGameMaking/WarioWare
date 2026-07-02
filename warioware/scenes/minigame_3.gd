@@ -25,6 +25,9 @@ func _process(delta):
 func _on_timer_timeout():
 	var new_item = item_scene.instantiate()
 	
+	if new_item.has_signal("hit_rock"):
+		new_item.hit_rock.connect(_on_falling_rock_hit_rock)
+	
 	var rando_x = randi_range(90,1070)
 	new_item.position = Vector2(rando_x,-50)
 	
