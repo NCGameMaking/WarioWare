@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ljexnivdrwlq"]
+
+[ext_resource type="Texture2D" uid="uid://cna2dmsx4urqg" path="res://rock.png" id="1_7fblv"]
+[ext_resource type="Script" uid="uid://c7jefri10fgrb" path="res://scenes/falling_rock.gd" id="1_e8xk3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e8xk3"]
+size = Vector2(335, 223)
+
+[node name="FallingRock" type="Node2D" unique_id=1509566781 groups=["rocks"]]
+position = Vector2(-2.5, -10.5)
+script = ExtResource("1_e8xk3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1066578676]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_7fblv")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1592846659]
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=327748216]
+position = Vector2(-2.5, -10.5)
+shape = SubResource("RectangleShape2D_e8xk3")

@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://cei4hmvpmmko5"]
+
+[ext_resource type="Texture2D" uid="uid://b4iwyv78fjxkj" path="res://Domino_Row_1.png" id="1_ijwtv"]
+[ext_resource type="Script" uid="uid://bwec8cy78m0wh" path="res://scenes/minigame_3.gd" id="1_yiing"]
+[ext_resource type="Script" uid="uid://bds1qdv1vlcg4" path="res://player.gd" id="3_nuwo7"]
+[ext_resource type="Texture2D" uid="uid://d3om58rhy2n2p" path="res://Wario.png" id="4_rguwe"]
+[ext_resource type="PackedScene" uid="uid://cxdhx3iuquyi" path="res://themed_timer.tscn" id="5_nuwo7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vhxdv"]
+size = Vector2(40, 40)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
+radius = 194.04123
+
+[node name="Minigame3" type="Node2D" unique_id=344029666]
+script = ExtResource("1_yiing")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=35967589]
+repeat_size = Vector2(945.605, 0)
+autoscroll = Vector2(100, 0)
+
+[node name="Background" type="TextureRect" parent="Parallax2D" unique_id=247573770]
+offset_left = -65.0
+offset_top = -19.0
+offset_right = 1310.0635
+offset_bottom = 668.0
+texture = ExtResource("1_ijwtv")
+metadata/_edit_use_anchors_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=772166353]
+position = Vector2(-28, 607)
+scale = Vector2(30.2, 1)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D" unique_id=1694254923]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.46725065, 0.71250284, 0.37174907, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=23722819]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_vhxdv")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="." unique_id=828671378]
+position = Vector2(1161, -84.999985)
+rotation = 1.5707964
+scale = Vector2(18.48572, 0.07779787)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D5" unique_id=435429987]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.46725065, 0.71250284, 0.37174907, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5" unique_id=2028975036]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_vhxdv")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="." unique_id=1705037362]
+position = Vector2(-3, -100.00001)
+rotation = 1.5707964
+scale = Vector2(18.48572, 0.07779787)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D6" unique_id=975724639]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.46725065, 0.71250284, 0.37174907, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6" unique_id=1754798700]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_vhxdv")
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="." unique_id=473312930]
+position = Vector2(-5.0000076, -21)
+rotation = 0.0061185546
+scale = Vector2(30.050154, 0.07779787)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D7" unique_id=176781847]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.46725065, 0.71250284, 0.37174907, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7" unique_id=1906191413]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_vhxdv")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=936028192]
+position = Vector2(207, 532)
+scale = Vector2(0.3, 0.3)
+script = ExtResource("3_nuwo7")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=610903775]
+texture = ExtResource("4_rguwe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1530855751]
+position = Vector2(-7, 0)
+shape = SubResource("CircleShape2D_onrkg")
+
+[node name="Area2D" type="Area2D" parent="Player" unique_id=945540862]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player/Area2D" unique_id=594638744]
+position = Vector2(-7, 0)
+shape = SubResource("CircleShape2D_onrkg")
+
+[node name="Timer" type="Timer" parent="." unique_id=518041317]
+autostart = true
+
+[node name="ThemedTimer" parent="." unique_id=1047901088 instance=ExtResource("5_nuwo7")]
+position = Vector2(20, 51)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://bnxewk2nwmy70"]
+
+[ext_resource type="Script" uid="uid://ths60olgd1y5" path="res://timer_screen.gd" id="1_bseyb"]
+[ext_resource type="Texture2D" uid="uid://8ds0n8j1wstn" path="res://Domino_Row_2.png" id="2_mxose"]
+[ext_resource type="Texture2D" uid="uid://bncy2ocs7377v" path="res://WarioTitle.png" id="3_y8rem"]
+[ext_resource type="Texture2D" uid="uid://c7rmatpdqwgjh" path="res://gorlic.png" id="4_0mi1i"]
+[ext_resource type="FontFile" uid="uid://dyeeseal1y6xb" path="res://Wariowareinc-BWWdn.ttf" id="5_jismn"]
+
+[node name="LevelScene" type="Node2D" unique_id=1654845019]
+script = ExtResource("1_bseyb")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=884559642]
+offset_right = 1148.0
+offset_bottom = 644.0
+texture = ExtResource("2_mxose")
+
+[node name="Wario" type="Sprite2D" parent="." unique_id=899379903]
+position = Vector2(186.74998, 447.16705)
+scale = Vector2(1.3939998, 1.3939998)
+texture = ExtResource("3_y8rem")
+
+[node name="GarlicContainer" type="HBoxContainer" parent="." unique_id=1235040525]
+offset_left = 229.0
+offset_top = 137.0
+offset_right = 9845.0
+offset_bottom = 1888.0
+scale = Vector2(0.07, 0.07)
+
+[node name="Garlic" type="TextureRect" parent="GarlicContainer" unique_id=1360127645]
+layout_mode = 2
+texture = ExtResource("4_0mi1i")
+
+[node name="Garlic2" type="TextureRect" parent="GarlicContainer" unique_id=286623743]
+layout_mode = 2
+texture = ExtResource("4_0mi1i")
+
+[node name="Garlic3" type="TextureRect" parent="GarlicContainer" unique_id=1081699719]
+layout_mode = 2
+texture = ExtResource("4_0mi1i")
+
+[node name="Garlic4" type="TextureRect" parent="GarlicContainer" unique_id=52421421]
+layout_mode = 2
+texture = ExtResource("4_0mi1i")
+
+[node name="Garlic5" type="TextureRect" parent="GarlicContainer" unique_id=2037343729]
+layout_mode = 2
+texture = ExtResource("4_0mi1i")
+
+[node name="Level" type="RichTextLabel" parent="." unique_id=1785430357]
+clip_contents = false
+offset_left = 502.0
+offset_top = 307.0
+offset_right = 988.0
+offset_bottom = 469.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("5_jismn")
+theme_override_font_sizes/normal_font_size = 42
+text = "Level:"
+
+[node name="Timer" type="RichTextLabel" parent="." unique_id=1016052853]
+clip_contents = false
+offset_left = 518.0
+offset_top = 526.0
+offset_right = 1004.0
+offset_bottom = 688.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("5_jismn")
+theme_override_font_sizes/normal_font_size = 42
+text = "0.0"

@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://bnaftxxvsk427"]
+
+[ext_resource type="Script" uid="uid://cntafr5ncs4p0" path="res://scenes/done_screen.gd" id="1_k66lo"]
+[ext_resource type="Texture2D" uid="uid://8ds0n8j1wstn" path="res://Domino_Row_2.png" id="1_uqm27"]
+[ext_resource type="FontFile" uid="uid://dyeeseal1y6xb" path="res://Wariowareinc-BWWdn.ttf" id="2_k66lo"]
+
+[node name="DoneScreen" type="Node2D" unique_id=309643900]
+script = ExtResource("1_k66lo")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=623635208]
+repeat_size = Vector2(945.605, 0)
+autoscroll = Vector2(100, 0)
+
+[node name="Background" type="TextureRect" parent="Parallax2D" unique_id=1308780112]
+offset_left = -65.0
+offset_top = -19.0
+offset_right = 1310.0635
+offset_bottom = 668.0
+texture = ExtResource("1_uqm27")
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=1652070104]
+clip_contents = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 302.0
+offset_top = 181.0
+offset_right = 788.0
+offset_bottom = 343.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_k66lo")
+theme_override_font_sizes/normal_font_size = 108
+text = "You won!"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Title" unique_id=336576317]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 163.0
+offset_right = 352.0
+offset_bottom = 354.0
+
+[node name="PlayButton" type="Button" parent="Title/VBoxContainer" unique_id=1006321124]
+custom_minimum_size = Vector2(287, 61)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_k66lo")
+theme_override_font_sizes/font_size = 40
+text = "Menu"
+
+[node name="QuitButton" type="Button" parent="Title/VBoxContainer" unique_id=2011194199]
+custom_minimum_size = Vector2(287, 61)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_k66lo")
+theme_override_font_sizes/font_size = 40
+text = "Quit"
+
+[connection signal="pressed" from="Title/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Title/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

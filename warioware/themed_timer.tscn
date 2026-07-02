@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cxdhx3iuquyi"]
+
+[ext_resource type="Script" uid="uid://b0agbsp84088f" path="res://themed_timer.gd" id="1_jnd3y"]
+[ext_resource type="FontFile" uid="uid://dyeeseal1y6xb" path="res://Wariowareinc-BWWdn.ttf" id="2_jwmp3"]
+
+[node name="ThemedTimer" type="Node2D" unique_id=1047901088]
+script = ExtResource("1_jnd3y")
+
+[node name="Timer" type="RichTextLabel" parent="." unique_id=1482348780]
+clip_contents = false
+offset_right = 486.0
+offset_bottom = 162.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_jwmp3")
+theme_override_font_sizes/normal_font_size = 42

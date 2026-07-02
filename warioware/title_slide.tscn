@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b4iwyv78fjxkj" path="res://Domino_Row_1.png" id="1_2myaw"]
 [ext_resource type="Script" uid="uid://dxs5a7frtdmlt" path="res://title_slide.gd" id="1_vj0xv"]
 [ext_resource type="FontFile" uid="uid://dyeeseal1y6xb" path="res://Wariowareinc-BWWdn.ttf" id="2_w2xth"]
-[ext_resource type="Texture2D" uid="uid://d3om58rhy2n2p" path="res://Wario.png" id="3_w2xth"]
+[ext_resource type="Texture2D" uid="uid://bncy2ocs7377v" path="res://WarioTitle.png" id="4_vj0xv"]
 
 [node name="TitleSlide" type="Node2D" unique_id=380557606]
 script = ExtResource("1_vj0xv")
@@ -23,10 +23,6 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("2_w2xth")
 theme_override_font_sizes/normal_font_size = 108
 text = "Warioware"
-
-[node name="Wario" type="Sprite2D" parent="." unique_id=332139316]
-position = Vector2(184, 450)
-texture = ExtResource("3_w2xth")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=712003143]
 offset_left = 412.0
@@ -58,6 +54,11 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_w2xth")
 theme_override_font_sizes/font_size = 40
 text = "Quit"
+
+[node name="WarioTitle" type="Sprite2D" parent="." unique_id=1563360617]
+position = Vector2(200.5, 449.278)
+scale = Vector2(1.444, 1.4439999)
+texture = ExtResource("4_vj0xv")
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/SettingButton" to="." method="_on_setting_button_pressed"]
