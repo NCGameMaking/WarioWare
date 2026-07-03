@@ -4,14 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://cb5sj0148hu3g" path="res://Domino_Row_3.png" id="2_lytqm"]
 [ext_resource type="FontFile" uid="uid://dyeeseal1y6xb" path="res://Wariowareinc-BWWdn.ttf" id="3_v2sw8"]
 
-[node name="LoseScreen" type="Node2D" unique_id=1111044063]
+[node name="LoseScreen" type="Control" unique_id=1854362902]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_73mov")
 
-[node name="Parallax2D" type="Parallax2D" parent="." unique_id=623635208]
-repeat_size = Vector2(945.605, 0)
-autoscroll = Vector2(100, 0)
-
-[node name="Background" type="TextureRect" parent="Parallax2D" unique_id=1308780112]
+[node name="Background" type="TextureRect" parent="." unique_id=1308780112]
+layout_mode = 0
 offset_left = -65.0
 offset_top = -19.0
 offset_right = 1310.0635
@@ -21,15 +21,16 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Title" type="RichTextLabel" parent="." unique_id=1652070104]
 clip_contents = false
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 345.0
-offset_top = 166.0
-offset_right = 831.0
-offset_bottom = 328.0
+offset_top = 120.0
+offset_right = 796.0
+offset_bottom = 258.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -37,27 +38,31 @@ theme_override_fonts/normal_font = ExtResource("3_v2sw8")
 theme_override_font_sizes/normal_font_size = 108
 text = "You lose!"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=336576317]
+[node name="MenuButton" type="Button" parent="." unique_id=649457159]
+z_index = 1
+custom_minimum_size = Vector2(287, 61)
+layout_mode = 0
 offset_left = 410.0
 offset_top = 344.0
 offset_right = 697.0
-offset_bottom = 535.0
-
-[node name="MenuButton" type="Button" parent="VBoxContainer" unique_id=649457159]
-custom_minimum_size = Vector2(287, 61)
-layout_mode = 2
+offset_bottom = 405.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_v2sw8")
 theme_override_font_sizes/font_size = 40
 text = "Menu"
 
-[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=2011194199]
+[node name="QuitButton" type="Button" parent="." unique_id=2011194199]
+z_index = 1
 custom_minimum_size = Vector2(287, 61)
-layout_mode = 2
+layout_mode = 0
+offset_left = 410.0
+offset_top = 409.0
+offset_right = 697.0
+offset_bottom = 470.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_v2sw8")
 theme_override_font_sizes/font_size = 40
 text = "Quit"
 
-[connection signal="pressed" from="VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

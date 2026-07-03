@@ -16,14 +16,10 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if timer_end:
-		Global.minigames_done +=1
 		if Global.minigames_done > 5: # we access a global script and see how many minigames have been compeleted
 			get_tree().change_scene_to_file("res://scenes/done_screen.tscn") # change current play scene into another, but you make your own finish screen in a later challenge, dont worry abt this rn
 		else:
 			get_tree().change_scene_to_file("res://scenes/timer_screen.tscn") # go back to the intermission scene
-
-
-
 
 func _on_timer_timeout():
 	var new_item = item_scene.instantiate()
@@ -38,7 +34,7 @@ func _on_timer_timeout():
 
 
 func _on_falling_rock_hit_rock():
-	Global.minigames_done -=1
 	Global.lives -=1
+	Global.minigames_done -=1
 	$WarioWAH.play()
 	get_tree().change_scene_to_file("res://scenes/timer_screen.tscn")

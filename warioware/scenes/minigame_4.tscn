@@ -296,6 +296,7 @@ position = Vector2(1194, 1165)
 position = Vector2(36.666664, -413.33334)
 
 [node name="ThemedTimer" parent="Player/Camera2D" unique_id=1047901088 instance=ExtResource("3_mxhla")]
+unique_name_in_owner = true
 position = Vector2(-1753.3333, -923.3333)
 scale = Vector2(3.3333333, 3.3333333)
 
