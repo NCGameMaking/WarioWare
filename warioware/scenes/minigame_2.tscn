@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://c30gvoe0r8fpj" path="res://scenes/button_1.gd" id="3_ksu6r"]
 [ext_resource type="PackedScene" uid="uid://cxdhx3iuquyi" path="res://themed_timer.tscn" id="4_dqa6p"]
 [ext_resource type="AudioStream" uid="uid://bb38hs8vj6hh3" path="res://SFX/CollectCoin.mp3" id="6_c3ytc"]
+[ext_resource type="AudioStream" uid="uid://d0o5dvrdjtkia" path="res://SFX/LoseSFX.mp3" id="7_eachr"]
 
 [node name="minigame2" type="Node2D" unique_id=286014754]
 script = ExtResource("1_dqa6p")
@@ -61,6 +62,9 @@ position = Vector2(876, 68)
 
 [node name="GarlicCollect" type="AudioStreamPlayer" parent="." unique_id=689665616]
 stream = ExtResource("6_c3ytc")
+
+[node name="WarioWaah" type="AudioStreamPlayer" parent="." unique_id=343434988]
+stream = ExtResource("7_eachr")
 
 [connection signal="pressed" from="Button1" to="Button1" method="_on_pressed"]
 [connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]

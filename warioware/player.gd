@@ -28,9 +28,6 @@ func _physics_process(delta):
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("rocks"):
-		print("hit by rock")
 		Global.minigames_done -=1
 		Global.lives -=1
 		get_tree().change_scene_to_file("res://scenes/timer_screen.tscn")
-	else:
-		print("hit by smthn")

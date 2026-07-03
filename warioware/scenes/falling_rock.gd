@@ -4,7 +4,7 @@ extends Node2D
 
 @onready var player_area = $"../Player/Area2D"
 
-@export var fall_speed = 200
+@export var fall_speed = 400
 
 signal hit_rock
 

@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://o6xo5mlhkyyu"]
+
+[ext_resource type="Script" uid="uid://eyf53hiopq5j" path="res://scenes/minigame_5.gd" id="1_0m6xo"]
+[ext_resource type="Texture2D" uid="uid://cb5sj0148hu3g" path="res://Domino_Row_3.png" id="1_hsfub"]
+[ext_resource type="PackedScene" uid="uid://bhjuguodewqja" path="res://player.tscn" id="2_wi4wl"]
+[ext_resource type="Texture2D" uid="uid://dcpxrtos5dpdr" path="res://GreenKoopaShell.svg" id="3_mye35"]
+[ext_resource type="Script" uid="uid://dcsf5knmmanps" path="res://scenes/koopa_shell.gd" id="3_rtm12"]
+[ext_resource type="PackedScene" uid="uid://cxdhx3iuquyi" path="res://themed_timer.tscn" id="6_fd0vc"]
+[ext_resource type="AudioStream" uid="uid://ihnf5r1mqabm" path="res://SFX/WarioDeathAnim.mp3" id="7_ts7o4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mye35"]
+size = Vector2(40, 40)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mye35"]
+radius = 30.0
+
+[node name="Minigame5" type="Node2D" unique_id=279290943]
+script = ExtResource("1_0m6xo")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1132618227]
+repeat_size = Vector2(1000, 0)
+autoscroll = Vector2(100, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Parallax2D" unique_id=1487594871]
+offset_right = 1330.0
+offset_bottom = 665.0
+texture = ExtResource("1_hsfub")
+
+[node name="Platforms" type="Node2D" parent="." unique_id=892328663]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Platforms" unique_id=641769335]
+position = Vector2(-28, 607)
+scale = Vector2(30.2, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Platforms/StaticBody2D" unique_id=810554849]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.46725065, 0.71250284, 0.37174907, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/StaticBody2D" unique_id=1168208296]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_mye35")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Platforms" unique_id=707413398]
+position = Vector2(38, -600)
+rotation = 1.5707964
+scale = Vector2(30.2, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Platforms/StaticBody2D2" unique_id=924289566]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.46725065, 0.71250284, 0.37174907, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/StaticBody2D2" unique_id=540715179]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_mye35")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Platforms" unique_id=1208259618]
+position = Vector2(1159, -600)
+rotation = 1.5707964
+scale = Vector2(30.2, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Platforms/StaticBody2D3" unique_id=1854365299]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.46725065, 0.71250284, 0.37174907, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/StaticBody2D3" unique_id=220078931]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_mye35")
+
+[node name="Player" parent="." unique_id=936028192 instance=ExtResource("2_wi4wl")]
+position = Vector2(434, 532)
+
+[node name="KoopaShell" type="Node2D" parent="." unique_id=68755069]
+position = Vector2(74, 575)
+script = ExtResource("3_rtm12")
+speed = 500
+
+[node name="Sprite2D" type="Sprite2D" parent="KoopaShell" unique_id=1089195207]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("3_mye35")
+
+[node name="Area2D" type="Area2D" parent="KoopaShell" unique_id=1937332383]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KoopaShell/Area2D" unique_id=134234828]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_mye35")
+
+[node name="KoopaShell2" type="Node2D" parent="." unique_id=541781926]
+position = Vector2(1066, 575)
+script = ExtResource("3_rtm12")
+speed = 700
+
+[node name="Sprite2D" type="Sprite2D" parent="KoopaShell2" unique_id=1969797626]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("3_mye35")
+
+[node name="Area2D" type="Area2D" parent="KoopaShell2" unique_id=1711547533]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KoopaShell2/Area2D" unique_id=1246215142]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_mye35")
+
+[node name="ThemedTimer" parent="." unique_id=1047901088 instance=ExtResource("6_fd0vc")]
+position = Vector2(91, 54)
+
+[node name="WARIOWAHH" type="AudioStreamPlayer" parent="." unique_id=1312131572]
+stream = ExtResource("7_ts7o4")
+
+[connection signal="area_entered" from="KoopaShell/Area2D" to="KoopaShell" method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="KoopaShell2/Area2D" to="KoopaShell2" method="_on_area_2d_area_entered"]

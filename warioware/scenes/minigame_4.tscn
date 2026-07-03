@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bhjuguodewqja" path="res://player.tscn" id="2_3n4v2"]
 [ext_resource type="PackedScene" uid="uid://cxdhx3iuquyi" path="res://themed_timer.tscn" id="3_mxhla"]
 [ext_resource type="Script" uid="uid://dvoopcyarip6v" path="res://scenes/lava.gd" id="4_mxhla"]
+[ext_resource type="AudioStream" uid="uid://ihnf5r1mqabm" path="res://SFX/WarioDeathAnim.mp3" id="6_jlkes"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8rojo"]
 size = Vector2(40, 40)
@@ -16,7 +17,7 @@ size = Vector2(1276.5, 40)
 script = ExtResource("1_ewl5d")
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=2021583554]
-repeat_size = Vector2(1000, 640)
+repeat_size = Vector2(960, 640)
 repeat_times = 6
 
 [node name="TextureRect" type="TextureRect" parent="Parallax2D" unique_id=263357839]
@@ -315,5 +316,8 @@ color = Color(0.9843137, 0.54509807, 0.3137255, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lava/LavaArea" unique_id=338140804]
 position = Vector2(637.25, 22)
 shape = SubResource("RectangleShape2D_3n4v2")
+
+[node name="WARIOWAH" type="AudioStreamPlayer" parent="." unique_id=1038663075]
+stream = ExtResource("6_jlkes")
 
 [connection signal="area_entered" from="Lava/LavaArea" to="Lava" method="_on_lava_area_area_entered"]

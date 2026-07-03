@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://vaj6k5e0jx1g"]
+
+[ext_resource type="Script" uid="uid://b3oojexdcmfp3" path="res://scenes/setting_menu.gd" id="1_m1jd0"]
+[ext_resource type="Texture2D" uid="uid://b4iwyv78fjxkj" path="res://Domino_Row_1.png" id="1_pgfik"]
+[ext_resource type="FontFile" uid="uid://dyeeseal1y6xb" path="res://Wariowareinc-BWWdn.ttf" id="2_vproo"]
+[ext_resource type="Texture2D" uid="uid://bncy2ocs7377v" path="res://WarioTitle.png" id="3_vproo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m1jd0"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 5
+
+[node name="SettingMenu" type="Control" unique_id=2060862759]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_m1jd0")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=778737673]
+layout_mode = 0
+offset_right = 1298.0
+offset_bottom = 649.0
+texture = ExtResource("1_pgfik")
+
+[node name="Title" type="RichTextLabel" parent="TextureRect" unique_id=1395773878]
+clip_contents = false
+layout_mode = 0
+offset_left = 361.0
+offset_top = 83.0
+offset_right = 847.0
+offset_bottom = 245.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_vproo")
+theme_override_font_sizes/normal_font_size = 108
+text = "Settings"
+
+[node name="Panel" type="Panel" parent="." unique_id=1223536526]
+layout_mode = 0
+offset_left = 245.0
+offset_top = 215.0
+offset_right = 887.0
+offset_bottom = 536.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_m1jd0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=718525983]
+layout_mode = 0
+offset_left = 172.0
+offset_top = 33.0
+offset_right = 472.0
+offset_bottom = 213.0
+theme_override_constants/separation = 15
+
+[node name="MuteButton" type="CheckBox" parent="Panel/VBoxContainer" unique_id=1093538140]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_vproo")
+theme_override_font_sizes/font_size = 42
+text = "Mute"
+
+[node name="FullscreenButton" type="CheckBox" parent="Panel/VBoxContainer" unique_id=805778548]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_vproo")
+theme_override_font_sizes/font_size = 42
+text = "Fullscreen"
+
+[node name="BackButton" type="Button" parent="Panel/VBoxContainer" unique_id=70230348]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_vproo")
+theme_override_font_sizes/font_size = 42
+text = "Back"
+
+[node name="WarioTitle" type="Sprite2D" parent="Panel/VBoxContainer" unique_id=1352455010]
+position = Vector2(-330, 308.99994)
+rotation = 0.5235988
+scale = Vector2(1.528, 1.528)
+texture = ExtResource("3_vproo")
+
+[connection signal="pressed" from="Panel/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

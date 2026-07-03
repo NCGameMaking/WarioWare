@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://cei4hmvpmmko5"]
 
-[ext_resource type="Texture2D" uid="uid://b4iwyv78fjxkj" path="res://Domino_Row_1.png" id="1_ijwtv"]
 [ext_resource type="Script" uid="uid://bwec8cy78m0wh" path="res://scenes/minigame_3.gd" id="1_yiing"]
+[ext_resource type="Texture2D" uid="uid://dggekmogfdoxo" path="res://Domino_Row_4.png" id="2_knknf"]
 [ext_resource type="Script" uid="uid://bds1qdv1vlcg4" path="res://player.gd" id="3_nuwo7"]
 [ext_resource type="Texture2D" uid="uid://d3om58rhy2n2p" path="res://Wario.png" id="4_rguwe"]
 [ext_resource type="AudioStream" uid="uid://br6nvawdoxnpo" path="res://SFX/WarioJump.mp3" id="5_knknf"]
 [ext_resource type="PackedScene" uid="uid://cxdhx3iuquyi" path="res://themed_timer.tscn" id="5_nuwo7"]
 [ext_resource type="AudioStream" uid="uid://cedlxntucvd1d" path="res://SFX/game-music-loop.mp3" id="6_rguwe"]
+[ext_resource type="AudioStream" uid="uid://ihnf5r1mqabm" path="res://SFX/WarioDeathAnim.mp3" id="8_ybnx4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vhxdv"]
 size = Vector2(40, 40)
@@ -26,7 +27,7 @@ offset_left = -65.0
 offset_top = -19.0
 offset_right = 1310.0635
 offset_bottom = 668.0
-texture = ExtResource("1_ijwtv")
+texture = ExtResource("2_knknf")
 metadata/_edit_use_anchors_ = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=772166353]
@@ -114,5 +115,8 @@ position = Vector2(20, 51)
 [node name="BGMUSIC" type="AudioStreamPlayer" parent="." unique_id=619124253]
 stream = ExtResource("6_rguwe")
 autoplay = true
+
+[node name="WarioWAH" type="AudioStreamPlayer" parent="." unique_id=359915183]
+stream = ExtResource("8_ybnx4")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

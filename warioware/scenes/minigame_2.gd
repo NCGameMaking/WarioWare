@@ -12,7 +12,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if buttons_pressed == 4:
-		if Global.minigames_done > 4:
+		if Global.minigames_done > 5:
 			get_tree().change_scene_to_file("res://scenes/done_screen.tscn")
 		else:
 			get_tree().change_scene_to_file("res://scenes/timer_screen.tscn")
@@ -20,4 +20,5 @@ func _process(delta: float) -> void:
 	if timer_end:
 		Global.lives -= 1
 		Global.minigames_done -=1
+		$WarioWaah.play()
 		get_tree().change_scene_to_file("res://scenes/timer_screen.tscn")
