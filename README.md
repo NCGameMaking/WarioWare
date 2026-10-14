@@ -19,6 +19,6 @@ The Game currently features 5 Minigames:
 * Minigame 4 - Parkour up the platforms as the orange lava rises
 * Minigame 5 - Jump over the Koopa Shells before time runs out
 
-All art assets were sourced either were Public domain or had a CC0 license Created for Stardance Hackclub - Make a WarioWare Game.
+All art assets were sourced either were Public domain or were created by me for Stardance Hackclub - Make a WarioWare Game.
 
 Thanks for playing, hope you have fun!
