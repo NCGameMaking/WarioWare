@@ -2,7 +2,8 @@
 
 <img width="666" height="371" alt="Screenshot 2026-07-02 090847" src="https://github.com/user-attachments/assets/cef91960-8e10-4dba-a813-f497bebe3180" />
 
-<img width="1155" height="647" alt="Screenshot 2026-07-03 101219" src="https://github.com/user-attachments/assets/735e919b-c287-44e9-8afa-d9cda532096d" />
+<img width="792" height="446" alt="image" src="https://github.com/user-attachments/assets/9db3bb39-2dac-42ac-9aab-56213aa4fa3c" />
+
 
 
 Controls:
